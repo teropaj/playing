@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+<body>
+
+<form>
+  What color do you prefer?<br>
+  <input type="radio" name="colors" id="red">Red<br>
+  <input type="radio" name="colors" id="blue">Blue
+</form>
+
+<button id="a1" onclick="check()">Check "Red"</button>
+<button onclick="uncheck()">Uncheck "Red"</button>
+
+<script>
+var time=0;
+function check() {
+    document.getElementById("red").checked = true;
+}
+function uncheck() {
+    document.getElementById("red").checked = false;
+}
+var screenSize=screen.availWidth;
+var div=document.createElement("div");
+div.style.width=div.style.height=screenSize*0.2+"px";
+div.style.marginleft="150px";
+div.style.background="red";
+
+div.style.borderLeft="60px solid";
+div.style.borderLeftColor="blue";
+document.body.appendChild(div);
+var interv=setInterval(timeout,3);
+
+function timeout () {div.style.marginLeft=time+"px";
+		 time++;
+		console.log(time);
+	if(time>1000) time=0;
+}
+
+
+</script>
+
+</body>
+</html>
